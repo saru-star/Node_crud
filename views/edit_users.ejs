@@ -1,0 +1,96 @@
+<%- include('layout/header') %>
+
+<div class="container">
+    <div class="row" style="margin-top: 30px;">
+      <div class="col">
+      </div>
+
+      <div class="col-6">
+        <div class="card">
+            <div class="card-header bg-success">Edit User (<%= user.name %>)</div>
+            <div class="container">
+              <form action="/update/<%= user._id  %>" method="post" id="add-form" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <div class="row" >
+                    <div class="col">
+                      <label class="form-label"> First name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="First name"
+                        aria-label="First name"
+                        name="firstname"
+                        value="<%= user.firstname %>"
+                        required
+                      />
+                    </div>
+                    <div class="col">
+                      <label class="form-label"> Last name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Last name"
+                        aria-label="Last name"
+                        name="lastname"
+                        value="<%=user.lastname%>"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col mb-3">
+                  <label for="email" class="form-label">Email address</label>
+                  <input 
+                    type="email" 
+                    class="form-control" 
+                    id="email" 
+                    aria-describedby="emailHelp" 
+                    name="email"
+                    value="<%= user.email %>"
+                    required
+                  />
+                  
+                </div>
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input 
+                    type="text" 
+                    class="form-control" 
+                    id="phone" 
+                    name="phone"
+                    value="<%= user.phone %>"
+                    required
+                  />
+                </div>
+
+                <div class="input-group mb-3">
+                    <input 
+                        type="file" 
+                        class="form-control" 
+                        name="image"
+                        accept="image/*" 
+                        id="inputGroupFile02"
+                        
+                    />
+                    <img src="/<%= user.image %>" width="100" class="img-thumbnail mt-1">
+                    
+                  </div>
+                  <input type="hidden" name="old_image" value="<%= user.image  %>"
+
+                
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-success" type="submit" name="submit" value="Update user">Update User</button>
+                    </div>
+            
+                </form>
+            </div>
+          </div>
+      </div>
+
+      <div class="col">
+      </div>
+    </div>
+
+
+
+<%- include('layout/footer') %>

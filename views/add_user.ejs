@@ -1,0 +1,74 @@
+<%- include('layout/header') %>
+
+<div class="container">
+    <div class="row" style="margin-top: 30px;">
+      <div class="col">
+      </div>
+
+      <div class="col-6">
+        <div class="card">
+            <div class="card-header bg-primary">Add User</div>
+            <div class="container">
+              <form action="/addUser" method="post" id="add-form" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <div class="row" >
+                    <div class="col">
+                      <label class="form-label"> First name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="First name"
+                        aria-label="First name"
+                        name="firstname"
+                        required
+                      />
+                    </div>
+                    <div class="col">
+                      <label class="form-label"> Last name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Last name"
+                        aria-label="Last name"
+                        name="lastname"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col mb-3">
+                  <label for="email" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email"
+                  required
+                  />
+                  
+                </div>
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input type="text" class="form-control" id="phone" name="phone"
+                  required
+                  />
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="file" accept="image/*" class="form-control" name="image" id="inputGroupFile02" required>
+                    
+                  </div>
+
+                
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="submit" name="submit">Add User</button>
+                    </div>
+            
+                </form>
+            </div>
+          </div>
+      </div>
+
+      <div class="col">
+      </div>
+    </div>
+
+
+
+<%- include('layout/footer') %>
